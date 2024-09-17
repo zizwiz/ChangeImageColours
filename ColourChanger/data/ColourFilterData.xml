@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ColourFilter>
+	<Data>
+		<name>Reset</name>
+		<RedByte_RedScalling>1</RedByte_RedScalling>
+		<RedByte_GreenScalling>0</RedByte_GreenScalling>
+		<RedByte_BlueScalling>0</RedByte_BlueScalling>
+		<RedByte_AlphaScalling>0</RedByte_AlphaScalling>
+		<RedByte_ColourCast>0</RedByte_ColourCast>
+
+		<GreenByte_RedScalling>0</GreenByte_RedScalling>
+		<GreenByte_GreenScalling>1</GreenByte_GreenScalling>
+		<GreenByte_BlueScalling>0</GreenByte_BlueScalling>
+		<GreenByte_AlphaScalling>0</GreenByte_AlphaScalling>
+		<GreenByte_ColourCast>0</GreenByte_ColourCast>
+
+		<BlueByte_RedScalling>0</BlueByte_RedScalling>
+		<BlueByte_GreenScalling>0</BlueByte_GreenScalling>
+		<BlueByte_BlueScalling>1</BlueByte_BlueScalling>
+		<BlueByte_AlphaScalling>0</BlueByte_AlphaScalling>
+		<BlueByte_ColourCast>0</BlueByte_ColourCast>
+
+		<AlphaByte_RedScalling>0</AlphaByte_RedScalling>
+		<AlphaByte_GreenScalling>0</AlphaByte_GreenScalling>
+		<AlphaByte_BlueScalling>0</AlphaByte_BlueScalling>
+		<AlphaByte_AlphaScalling>1</AlphaByte_AlphaScalling>
+		<AlphaByte_ColourCast>0</AlphaByte_ColourCast>
+
+		<NotUsed_RedScalling>0</NotUsed_RedScalling>
+		<NotUsed_GreenScalling>0</NotUsed_GreenScalling>
+		<NotUsed_BlueScalling>0</NotUsed_BlueScalling>
+		<NotUsed_AlphaScalling>0</NotUsed_AlphaScalling>
+		<NotUsed_ColourCast>1</NotUsed_ColourCast>
+	</Data>
+
+	<Data>
+		<name>Sepia</name>
+		<RedByte_RedScalling>0.393</RedByte_RedScalling>
+		<RedByte_GreenScalling>0.769</RedByte_GreenScalling>
+		<RedByte_BlueScalling>0.189</RedByte_BlueScalling>
+		<RedByte_AlphaScalling>0</RedByte_AlphaScalling>
+		<RedByte_ColourCast>0</RedByte_ColourCast>
+
+		<GreenByte_RedScalling>0.349</GreenByte_RedScalling>
+		<GreenByte_GreenScalling>0.686</GreenByte_GreenScalling>
+		<GreenByte_BlueScalling>0.168</GreenByte_BlueScalling>
+		<GreenByte_AlphaScalling>0</GreenByte_AlphaScalling>
+		<GreenByte_ColourCast>0</GreenByte_ColourCast>
+
+		<BlueByte_RedScalling>0.272</BlueByte_RedScalling>
+		<BlueByte_GreenScalling>0.534</BlueByte_GreenScalling>
+		<BlueByte_BlueScalling>0.131</BlueByte_BlueScalling>
+		<BlueByte_AlphaScalling>0</BlueByte_AlphaScalling>
+		<BlueByte_ColourCast>0</BlueByte_ColourCast>
+
+		<AlphaByte_RedScalling>0</AlphaByte_RedScalling>
+		<AlphaByte_GreenScalling>0</AlphaByte_GreenScalling>
+		<AlphaByte_BlueScalling>0</AlphaByte_BlueScalling>
+		<AlphaByte_AlphaScalling>1</AlphaByte_AlphaScalling>
+		<AlphaByte_ColourCast>0</AlphaByte_ColourCast>
+
+		<NotUsed_RedScalling>0</NotUsed_RedScalling>
+		<NotUsed_GreenScalling>0</NotUsed_GreenScalling>
+		<NotUsed_BlueScalling>0</NotUsed_BlueScalling>
+		<NotUsed_AlphaScalling>0</NotUsed_AlphaScalling>
+		<NotUsed_ColourCast>1</NotUsed_ColourCast>
+	</Data>
+
+	<Data>
+		<name>Grey Scale</name>
+		<RedByte_RedScalling>0.33</RedByte_RedScalling>
+		<RedByte_GreenScalling>0.59</RedByte_GreenScalling>
+		<RedByte_BlueScalling>0.11</RedByte_BlueScalling>
+		<RedByte_AlphaScalling>0</RedByte_AlphaScalling>
+		<RedByte_ColourCast>0</RedByte_ColourCast>
+
+		<GreenByte_RedScalling>0.33</GreenByte_RedScalling>
+		<GreenByte_GreenScalling>0.59</GreenByte_GreenScalling>
+		<GreenByte_BlueScalling>0.11</GreenByte_BlueScalling>
+		<GreenByte_AlphaScalling>0</GreenByte_AlphaScalling>
+		<GreenByte_ColourCast>0</GreenByte_ColourCast>
+
+		<BlueByte_RedScalling>0.33</BlueByte_RedScalling>
+		<BlueByte_GreenScalling>0.59</BlueByte_GreenScalling>
+		<BlueByte_BlueScalling>0.11</BlueByte_BlueScalling>
+		<BlueByte_AlphaScalling>0</BlueByte_AlphaScalling>
+		<BlueByte_ColourCast>0</BlueByte_ColourCast>
+
+		<AlphaByte_RedScalling>0</AlphaByte_RedScalling>
+		<AlphaByte_GreenScalling>0</AlphaByte_GreenScalling>
+		<AlphaByte_BlueScalling>0</AlphaByte_BlueScalling>
+		<AlphaByte_AlphaScalling>1</AlphaByte_AlphaScalling>
+		<AlphaByte_ColourCast>0</AlphaByte_ColourCast>
+
+		<NotUsed_RedScalling>0</NotUsed_RedScalling>
+		<NotUsed_GreenScalling>0</NotUsed_GreenScalling>
+		<NotUsed_BlueScalling>0</NotUsed_BlueScalling>
+		<NotUsed_AlphaScalling>0</NotUsed_AlphaScalling>
+		<NotUsed_ColourCast>1</NotUsed_ColourCast>
+	</Data>
+
+
+</ColourFilter>
