@@ -61,6 +61,28 @@ namespace ColourChanger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;ColourFilter&gt;
+        ///	&lt;Data&gt;
+        ///		&lt;name&gt;Reset&lt;/name&gt;
+        ///		&lt;RedByte_RedScalling&gt;1&lt;/RedByte_RedScalling&gt;
+        ///		&lt;RedByte_GreenScalling&gt;0&lt;/RedByte_GreenScalling&gt;
+        ///		&lt;RedByte_BlueScalling&gt;0&lt;/RedByte_BlueScalling&gt;
+        ///		&lt;RedByte_AlphaScalling&gt;0&lt;/RedByte_AlphaScalling&gt;
+        ///		&lt;RedByte_ColourCast&gt;0&lt;/RedByte_ColourCast&gt;
+        ///
+        ///		&lt;GreenByte_RedScalling&gt;0&lt;/GreenByte_RedScalling&gt;
+        ///		&lt;GreenByte_GreenScalling&gt;1&lt;/GreenByte_GreenScalling&gt;
+        ///		&lt;GreenByte_BlueScalling&gt;0&lt;/GreenByte_BlueScalling&gt;
+        ///		&lt;GreenByte [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ColourFilterData {
+            get {
+                return ResourceManager.GetString("ColourFilterData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon help {
