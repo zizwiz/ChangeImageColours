@@ -96,6 +96,7 @@ namespace ColourChanger
             this.cmbobx_ColourFilters.Name = "cmbobx_ColourFilters";
             this.cmbobx_ColourFilters.Size = new System.Drawing.Size(351, 28);
             this.cmbobx_ColourFilters.TabIndex = 0;
+            this.cmbobx_ColourFilters.SelectedIndexChanged += new System.EventHandler(this.cmbobx_ColourFilters_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -128,39 +129,44 @@ namespace ColourChanger
             // 
             // RedByte
             // 
+            this.RedByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.RedByte.HeaderText = "Red Byte";
             this.RedByte.MinimumWidth = 8;
             this.RedByte.Name = "RedByte";
-            this.RedByte.Width = 150;
+            this.RedByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // GreenByte
             // 
+            this.GreenByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.GreenByte.HeaderText = "Green Byte";
             this.GreenByte.MinimumWidth = 8;
             this.GreenByte.Name = "GreenByte";
-            this.GreenByte.Width = 150;
+            this.GreenByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // BlueByte
             // 
+            this.BlueByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.BlueByte.HeaderText = "Blue Byte";
             this.BlueByte.MinimumWidth = 8;
             this.BlueByte.Name = "BlueByte";
-            this.BlueByte.Width = 150;
+            this.BlueByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // AlphaByte
             // 
+            this.AlphaByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.AlphaByte.HeaderText = "Alpha Byte";
             this.AlphaByte.MinimumWidth = 8;
             this.AlphaByte.Name = "AlphaByte";
-            this.AlphaByte.Width = 150;
+            this.AlphaByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // NotUsed
             // 
+            this.NotUsed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NotUsed.HeaderText = "Not Used";
             this.NotUsed.MinimumWidth = 8;
             this.NotUsed.Name = "NotUsed";
             this.NotUsed.ReadOnly = true;
-            this.NotUsed.Width = 150;
+            this.NotUsed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Form1
             // 

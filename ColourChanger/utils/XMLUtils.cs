@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System.Windows.Forms;
 using System.Xml;
 using ColourChanger.data;
 
-namespace ColourChanger
+namespace ColourChanger.utils
 {
-    public partial class Form1
+    class XMLUtils
     {
-        void PopulateColourFiltersCmboBx()
+        public static void PopulateColourFiltersCmboBx(ComboBox mycombobox)
         {
             // A different thread watch cross threading
             //populate the combo boxes with the airfield names direct from xml file so we get 
@@ -17,26 +17,12 @@ namespace ColourChanger
 
             foreach (XmlNode Name in ColourFilterList)
             {
-                // data is content of each name
                 string[] data = ColourFilterData.GetColourFilterData(Name.InnerText);
-                
-                //use invoke to prevent cross threading
-                BeginInvoke(new Action(() =>
-                {
-                    cmbobx_ColourFilters.Items.Add(Name.InnerText);
-                }));
+                mycombobox.Items.Add(Name.InnerText);
             }
 
-            //use invoke ot prevent cross threading
             //Set to Cambridge City Airport
-            BeginInvoke(new Action(() =>
-            {
-                cmbobx_ColourFilters.SelectedIndex = 0;
-            }));
+            mycombobox.SelectedIndex = 0;
         }
-
-
-
-
     }
 }
