@@ -36,6 +36,10 @@ namespace ColourChanger
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cmbobx_ColourFilters = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_update_filter = new System.Windows.Forms.Button();
+            this.btn_delete_filter = new System.Windows.Forms.Button();
+            this.btn_new_filter = new System.Windows.Forms.Button();
+            this.lbl_filter_name = new System.Windows.Forms.Label();
             this.dgv_ColourFiltersData = new System.Windows.Forms.DataGridView();
             this.RedByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GreenByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,11 +99,16 @@ namespace ColourChanger
             this.cmbobx_ColourFilters.Location = new System.Drawing.Point(609, 194);
             this.cmbobx_ColourFilters.Name = "cmbobx_ColourFilters";
             this.cmbobx_ColourFilters.Size = new System.Drawing.Size(351, 28);
+            this.cmbobx_ColourFilters.Sorted = true;
             this.cmbobx_ColourFilters.TabIndex = 0;
             this.cmbobx_ColourFilters.SelectedIndexChanged += new System.EventHandler(this.cmbobx_ColourFilters_SelectedIndexChanged);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btn_update_filter);
+            this.tabPage2.Controls.Add(this.btn_delete_filter);
+            this.tabPage2.Controls.Add(this.btn_new_filter);
+            this.tabPage2.Controls.Add(this.lbl_filter_name);
             this.tabPage2.Controls.Add(this.dgv_ColourFiltersData);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -108,6 +117,45 @@ namespace ColourChanger
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_update_filter
+            // 
+            this.btn_update_filter.Location = new System.Drawing.Point(248, 408);
+            this.btn_update_filter.Name = "btn_update_filter";
+            this.btn_update_filter.Size = new System.Drawing.Size(138, 43);
+            this.btn_update_filter.TabIndex = 5;
+            this.btn_update_filter.Text = "Update Filter";
+            this.btn_update_filter.UseVisualStyleBackColor = true;
+            this.btn_update_filter.Click += new System.EventHandler(this.btn_update_filter_Click);
+            // 
+            // btn_delete_filter
+            // 
+            this.btn_delete_filter.Location = new System.Drawing.Point(82, 408);
+            this.btn_delete_filter.Name = "btn_delete_filter";
+            this.btn_delete_filter.Size = new System.Drawing.Size(138, 43);
+            this.btn_delete_filter.TabIndex = 4;
+            this.btn_delete_filter.Text = "Delete Filter";
+            this.btn_delete_filter.UseVisualStyleBackColor = true;
+            this.btn_delete_filter.Click += new System.EventHandler(this.btn_delete_filter_Click);
+            // 
+            // btn_new_filter
+            // 
+            this.btn_new_filter.Location = new System.Drawing.Point(838, 408);
+            this.btn_new_filter.Name = "btn_new_filter";
+            this.btn_new_filter.Size = new System.Drawing.Size(152, 43);
+            this.btn_new_filter.TabIndex = 3;
+            this.btn_new_filter.Text = "Create New Filter";
+            this.btn_new_filter.UseVisualStyleBackColor = true;
+            this.btn_new_filter.Click += new System.EventHandler(this.btn_new_filter_Click);
+            // 
+            // lbl_filter_name
+            // 
+            this.lbl_filter_name.AutoSize = true;
+            this.lbl_filter_name.Location = new System.Drawing.Point(90, 33);
+            this.lbl_filter_name.Name = "lbl_filter_name";
+            this.lbl_filter_name.Size = new System.Drawing.Size(51, 20);
+            this.lbl_filter_name.TabIndex = 2;
+            this.lbl_filter_name.Text = "label1";
             // 
             // dgv_ColourFiltersData
             // 
@@ -120,7 +168,7 @@ namespace ColourChanger
             this.BlueByte,
             this.AlphaByte,
             this.NotUsed});
-            this.dgv_ColourFiltersData.Location = new System.Drawing.Point(102, 32);
+            this.dgv_ColourFiltersData.Location = new System.Drawing.Point(82, 67);
             this.dgv_ColourFiltersData.Name = "dgv_ColourFiltersData";
             this.dgv_ColourFiltersData.RowHeadersWidth = 62;
             this.dgv_ColourFiltersData.RowTemplate.Height = 28;
@@ -183,6 +231,7 @@ namespace ColourChanger
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ColourFiltersData)).EndInit();
             this.ResumeLayout(false);
 
@@ -202,6 +251,10 @@ namespace ColourChanger
         private System.Windows.Forms.DataGridViewTextBoxColumn BlueByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn AlphaByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotUsed;
+        private System.Windows.Forms.Label lbl_filter_name;
+        private System.Windows.Forms.Button btn_update_filter;
+        private System.Windows.Forms.Button btn_delete_filter;
+        private System.Windows.Forms.Button btn_new_filter;
     }
 }
 
