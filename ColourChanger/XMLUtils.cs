@@ -36,7 +36,7 @@ namespace ColourChanger
             {
                 // data is content of each name
                 string[] data = ColourFilterData.GetColourFilterData(Name.InnerText);
-                
+
                 //use invoke to prevent cross threading
                 BeginInvoke(new Action(() =>
                 {
@@ -101,7 +101,7 @@ namespace ColourChanger
         /// <param name="e"></param>
         private void btn_new_filter_Click(object sender, EventArgs e)
         {
-            string myFilterName; 
+            string myFilterName;
 
             if (btn_new_filter.Text == "Create New Filter") //If it is add then we ask for a name
             {
@@ -112,7 +112,7 @@ namespace ColourChanger
 
                 btn_delete_filter.Visible = false;
                 btn_update_filter.Visible = false;
-                
+
                 // Check if the name already exists. If it does let user know and do nothing
                 //If name does not exist then we can do some work to add it.
 
@@ -147,7 +147,7 @@ namespace ColourChanger
                 //repopulate the combo box.
                 //Start thread to populate the colour filter combobox
                 //Watch cross threading
-                Thread myThread = new Thread( () => PopulateColourFiltersCmboBx(lbl_filter_name.Text));
+                Thread myThread = new Thread(() => PopulateColourFiltersCmboBx(lbl_filter_name.Text));
                 myThread.Start();
             }
         }
@@ -266,7 +266,7 @@ namespace ColourChanger
                 node["NotUsed_BlueScalling"].InnerText = dgv_ColourFiltersData[2, 4].Value.ToString();
                 node["NotUsed_AlphaScalling"].InnerText = dgv_ColourFiltersData[3, 4].Value.ToString();
                 node["NotUsed_ColourCast"].InnerText = dgv_ColourFiltersData[4, 4].Value.ToString();
-                
+
                 doc.Save("ColourFilterdata.xml");
             }
         }
@@ -282,50 +282,53 @@ namespace ColourChanger
                     MessageBoxIcon.Error);
                 return;
             }
-           
-            DeleteData(FilterName);
 
-            PopulateColourFiltersCmboBx("Reset");
+            if (DeleteData(FilterName))
+            {
+                PopulateColourFiltersCmboBx("Reset");
+            }
+            else
+            {
+                MsgBox.Show("Something has gone wrong, I am unable to delete that filter", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
-        private bool DeleteData(string myAircraftName)
+        private bool DeleteData(string FilterName)
         {
-            //bool areYouSure = true;
+            bool areYouSure = true;
+            
+            //create a dialog to ask if user is sure they want to delete aircraft
+            var AreYouSureForm = new AreYouSure(FilterName);
+            AreYouSureForm.ShowDialog();
+            areYouSure = AreYouSureForm.areYouSureToDelete;
 
-            //if (grpbx_aircraftname_new.Visible)
-            //{
-            //    //create a dialog to ask if user is sure they want to delete aircraft
-            //    var AreYouSureForm = new AreYouSure(myAircraftName);
-            //    AreYouSureForm.ShowDialog();
-            //    areYouSure = AreYouSureForm.areYouSureToDelete;
-            //}
+            if (areYouSure) //Only delete is yes else ignore
+            {
+                // create the XML, load the contents
+                XmlDocument doc = new XmlDocument();
+                doc.Load("ColourFilterdata.xml");
 
-            //if (areYouSure) //Only delete is yes else ignore
-            //{
-            //    // create the XML, load the contents
-            //    XmlDocument doc = new XmlDocument();
-            //    doc.Load("data.xml");
+                string xQryStr = "//Data[name ='" + FilterName + "']";
 
-            //    string xQryStr = "//aircraft_info[aircraft_name ='" + myAircraftName + "']";
+                XmlNode node = doc.SelectSingleNode(xQryStr);
 
-            //    XmlNode node = doc.SelectSingleNode(xQryStr);
+                // if found....
+                if (node != null)
+                {
+                    // get its parent node
+                    XmlNode parent = node.ParentNode;
 
-            //    // if found....
-            //    if (node != null)
-            //    {
-            //        // get its parent node
-            //        XmlNode parent = node.ParentNode;
+                    // remove the child node
+                    parent.RemoveChild(node);
 
-            //        // remove the child node
-            //        parent.RemoveChild(node);
+                    // verify the new XML structure
+                    string newXML = doc.OuterXml;
 
-            //        // verify the new XML structure
-            //        string newXML = doc.OuterXml;
-
-            //        // save to file
-            //        doc.Save(@"data.xml");
-            //    }
-            //}
+                    // save to file
+                    doc.Save(@"ColourFilterdata.xml");
+                }
+            }
 
             return true;
         }

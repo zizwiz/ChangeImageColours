@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace xmlFactory
+namespace ColourChanger
 {
     public partial class AreYouSure : Form
     {

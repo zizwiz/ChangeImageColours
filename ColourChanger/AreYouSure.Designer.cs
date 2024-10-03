@@ -1,5 +1,5 @@
 ﻿
-namespace xmlFactory
+namespace ColourChanger
 {
     partial class AreYouSure
     {
