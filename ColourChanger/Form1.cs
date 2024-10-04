@@ -26,7 +26,7 @@ namespace ColourChanger
                 dgv_ColourFiltersData.Rows.Add();
             }
 
-           
+
             //if the xml file is not present then create it from the template one in resources 
             if (!File.Exists("ColourFilterData.xml"))
                 File.WriteAllText("ColourFilterData.xml", Properties.Resources.ColourFilterData);
@@ -54,6 +54,21 @@ namespace ColourChanger
             PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
         }
 
-       
+        private void btn_open_image_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                picbx_Original.Image = LoadBitmapUnlocked(openFileDialog.FileName);
+
+                string myFileName = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
+
+                ApplyFilterToImage();
+            }
+
+        }
+
+        
     }
 }
