@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Threading;
@@ -60,6 +61,14 @@ namespace ColourChanger
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                if (picbx_Original.Image != null) //if already an image present then clear it and collect garbage
+                {
+                    picbx_Original.Image = null;
+                    picbx_result.Image = null;
+                    GC.Collect();
+                }
+
+                //open the new image
                 picbx_Original.Image = LoadBitmapUnlocked(openFileDialog.FileName);
 
                 string myFileName = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
@@ -69,6 +78,15 @@ namespace ColourChanger
 
         }
 
-        
+        private void btn_apply_filter_Click(object sender, EventArgs e)
+        {
+            ApplyFilterToImage();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
+            ApplyFilterToImage();
+        }
     }
 }

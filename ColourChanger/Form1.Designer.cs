@@ -45,10 +45,12 @@ namespace ColourChanger
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.cmbobx_ColourFilters = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btn_apply_filter = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_reset = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -72,7 +74,6 @@ namespace ColourChanger
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.picbx_Original = new System.Windows.Forms.PictureBox();
             this.picbx_result = new System.Windows.Forms.PictureBox();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tab_filters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -81,7 +82,9 @@ namespace ColourChanger
             this.panel4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -97,7 +100,6 @@ namespace ColourChanger
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).BeginInit();
-            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -259,6 +261,15 @@ namespace ColourChanger
             this.panel5.Size = new System.Drawing.Size(560, 46);
             this.panel5.TabIndex = 0;
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.cmbobx_ColourFilters);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(560, 46);
+            this.panel15.TabIndex = 0;
+            // 
             // cmbobx_ColourFilters
             // 
             this.cmbobx_ColourFilters.FormattingEnabled = true;
@@ -308,11 +319,22 @@ namespace ColourChanger
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btn_apply_filter);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(8, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(174, 58);
             this.panel7.TabIndex = 7;
+            // 
+            // btn_apply_filter
+            // 
+            this.btn_apply_filter.Location = new System.Drawing.Point(18, 8);
+            this.btn_apply_filter.Name = "btn_apply_filter";
+            this.btn_apply_filter.Size = new System.Drawing.Size(138, 43);
+            this.btn_apply_filter.TabIndex = 7;
+            this.btn_apply_filter.Text = "Apply Filter";
+            this.btn_apply_filter.UseVisualStyleBackColor = true;
+            this.btn_apply_filter.Click += new System.EventHandler(this.btn_apply_filter_Click);
             // 
             // panel8
             // 
@@ -331,6 +353,7 @@ namespace ColourChanger
             this.btn_reset.TabIndex = 6;
             this.btn_reset.Text = "Reset";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // panel9
             // 
@@ -412,7 +435,7 @@ namespace ColourChanger
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1436, 274);
+            this.tabPage1.Size = new System.Drawing.Size(1436, 273);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ToDo";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -570,15 +593,6 @@ namespace ColourChanger
             this.picbx_result.TabIndex = 4;
             this.picbx_result.TabStop = false;
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.cmbobx_ColourFilters);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(560, 46);
-            this.panel15.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -599,7 +613,9 @@ namespace ColourChanger
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -616,7 +632,6 @@ namespace ColourChanger
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).EndInit();
-            this.panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -666,6 +681,7 @@ namespace ColourChanger
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btn_save_image;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button btn_apply_filter;
     }
 }
 
