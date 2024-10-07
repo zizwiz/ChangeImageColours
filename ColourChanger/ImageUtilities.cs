@@ -28,6 +28,7 @@ namespace ColourChanger
                 return; //If no image do nothing
             }
             
+            picbx_result.Invalidate();
             picbx_result.Image = AdjustColor(picbx_Original.Image);
             
             

@@ -41,7 +41,7 @@ namespace ColourChanger
             this.GreenByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BlueByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AlphaByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NotUsed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brightness = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -60,7 +60,27 @@ namespace ColourChanger
             this.panel11 = new System.Windows.Forms.Panel();
             this.btn_update_filter = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.btn_new_filter = new System.Windows.Forms.Button();
+            this.btn_add_filter = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.trkbar_brightness = new System.Windows.Forms.TrackBar();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.lbl_brightness = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.trkbar_contrast = new System.Windows.Forms.TrackBar();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.lbl_contrast = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.trkbar_hue = new System.Windows.Forms.TrackBar();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -90,6 +110,23 @@ namespace ColourChanger
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbar_brightness)).BeginInit();
+            this.panel21.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbar_contrast)).BeginInit();
+            this.panel23.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbar_hue)).BeginInit();
+            this.panel25.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -130,7 +167,7 @@ namespace ColourChanger
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1444, 306);
+            this.tabControl1.Size = new System.Drawing.Size(1444, 374);
             this.tabControl1.TabIndex = 2;
             // 
             // tab_filters
@@ -139,7 +176,7 @@ namespace ColourChanger
             this.tab_filters.Location = new System.Drawing.Point(4, 29);
             this.tab_filters.Name = "tab_filters";
             this.tab_filters.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_filters.Size = new System.Drawing.Size(1436, 273);
+            this.tab_filters.Size = new System.Drawing.Size(1436, 341);
             this.tab_filters.TabIndex = 1;
             this.tab_filters.Text = "Filters";
             this.tab_filters.UseVisualStyleBackColor = true;
@@ -151,12 +188,14 @@ namespace ColourChanger
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel5.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.panel4, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel16, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1430, 267);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1430, 335);
             this.tableLayoutPanel5.TabIndex = 6;
             // 
             // panel3
@@ -165,7 +204,7 @@ namespace ColourChanger
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(852, 261);
+            this.panel3.Size = new System.Drawing.Size(852, 269);
             this.panel3.TabIndex = 0;
             // 
             // dgv_ColourFiltersData
@@ -178,13 +217,13 @@ namespace ColourChanger
             this.GreenByte,
             this.BlueByte,
             this.AlphaByte,
-            this.NotUsed});
+            this.Brightness});
             this.dgv_ColourFiltersData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ColourFiltersData.Location = new System.Drawing.Point(0, 0);
             this.dgv_ColourFiltersData.Name = "dgv_ColourFiltersData";
             this.dgv_ColourFiltersData.RowHeadersWidth = 62;
             this.dgv_ColourFiltersData.RowTemplate.Height = 28;
-            this.dgv_ColourFiltersData.Size = new System.Drawing.Size(852, 261);
+            this.dgv_ColourFiltersData.Size = new System.Drawing.Size(852, 269);
             this.dgv_ColourFiltersData.TabIndex = 0;
             // 
             // RedByte
@@ -219,14 +258,14 @@ namespace ColourChanger
             this.AlphaByte.Name = "AlphaByte";
             this.AlphaByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // NotUsed
+            // Brightness
             // 
-            this.NotUsed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NotUsed.HeaderText = "Not Used";
-            this.NotUsed.MinimumWidth = 8;
-            this.NotUsed.Name = "NotUsed";
-            this.NotUsed.ReadOnly = true;
-            this.NotUsed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Brightness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Brightness.HeaderText = "Brightness";
+            this.Brightness.MinimumWidth = 8;
+            this.Brightness.Name = "Brightness";
+            this.Brightness.ReadOnly = true;
+            this.Brightness.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel4
             // 
@@ -234,7 +273,7 @@ namespace ColourChanger
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(861, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(566, 261);
+            this.panel4.Size = new System.Drawing.Size(566, 269);
             this.panel4.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -249,7 +288,7 @@ namespace ColourChanger
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(566, 261);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(566, 269);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel5
@@ -258,7 +297,7 @@ namespace ColourChanger
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(560, 46);
+            this.panel5.Size = new System.Drawing.Size(560, 47);
             this.panel5.TabIndex = 0;
             // 
             // panel15
@@ -267,7 +306,7 @@ namespace ColourChanger
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(560, 46);
+            this.panel15.Size = new System.Drawing.Size(560, 47);
             this.panel15.TabIndex = 0;
             // 
             // cmbobx_ColourFilters
@@ -298,7 +337,7 @@ namespace ColourChanger
             this.tableLayoutPanel7.Controls.Add(this.panel11, 3, 2);
             this.tableLayoutPanel7.Controls.Add(this.panel12, 1, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 55);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 56);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 5;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -306,7 +345,7 @@ namespace ColourChanger
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(560, 203);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(560, 210);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // panel6
@@ -314,7 +353,7 @@ namespace ColourChanger
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(378, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(174, 58);
+            this.panel6.Size = new System.Drawing.Size(174, 60);
             this.panel6.TabIndex = 6;
             // 
             // panel7
@@ -323,7 +362,7 @@ namespace ColourChanger
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(8, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(174, 58);
+            this.panel7.Size = new System.Drawing.Size(174, 60);
             this.panel7.TabIndex = 7;
             // 
             // btn_apply_filter
@@ -342,7 +381,7 @@ namespace ColourChanger
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(193, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(174, 58);
+            this.panel8.Size = new System.Drawing.Size(174, 60);
             this.panel8.TabIndex = 8;
             // 
             // btn_reset
@@ -359,9 +398,9 @@ namespace ColourChanger
             // 
             this.panel9.Controls.Add(this.lbl_filter_name);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(8, 141);
+            this.panel9.Location = new System.Drawing.Point(8, 145);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(174, 59);
+            this.panel9.Size = new System.Drawing.Size(174, 62);
             this.panel9.TabIndex = 9;
             // 
             // lbl_filter_name
@@ -377,9 +416,9 @@ namespace ColourChanger
             // 
             this.panel10.Controls.Add(this.btn_delete_filter);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(378, 72);
+            this.panel10.Location = new System.Drawing.Point(378, 74);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(174, 58);
+            this.panel10.Size = new System.Drawing.Size(174, 60);
             this.panel10.TabIndex = 10;
             // 
             // btn_delete_filter
@@ -396,9 +435,9 @@ namespace ColourChanger
             // 
             this.panel11.Controls.Add(this.btn_update_filter);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(193, 72);
+            this.panel11.Location = new System.Drawing.Point(193, 74);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(174, 58);
+            this.panel11.Size = new System.Drawing.Size(174, 60);
             this.panel11.TabIndex = 11;
             // 
             // btn_update_filter
@@ -413,29 +452,244 @@ namespace ColourChanger
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.btn_new_filter);
+            this.panel12.Controls.Add(this.btn_add_filter);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(8, 72);
+            this.panel12.Location = new System.Drawing.Point(8, 74);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(174, 58);
+            this.panel12.Size = new System.Drawing.Size(174, 60);
             this.panel12.TabIndex = 12;
             // 
-            // btn_new_filter
+            // btn_add_filter
             // 
-            this.btn_new_filter.Location = new System.Drawing.Point(10, 8);
-            this.btn_new_filter.Name = "btn_new_filter";
-            this.btn_new_filter.Size = new System.Drawing.Size(152, 43);
-            this.btn_new_filter.TabIndex = 3;
-            this.btn_new_filter.Text = "Create New Filter";
-            this.btn_new_filter.UseVisualStyleBackColor = true;
-            this.btn_new_filter.Click += new System.EventHandler(this.btn_new_filter_Click);
+            this.btn_add_filter.Location = new System.Drawing.Point(10, 8);
+            this.btn_add_filter.Name = "btn_add_filter";
+            this.btn_add_filter.Size = new System.Drawing.Size(152, 43);
+            this.btn_add_filter.TabIndex = 3;
+            this.btn_add_filter.Text = "Add Filter";
+            this.btn_add_filter.UseVisualStyleBackColor = true;
+            this.btn_add_filter.Click += new System.EventHandler(this.btn_add_filter_Click);
+            // 
+            // panel16
+            // 
+            this.tableLayoutPanel5.SetColumnSpan(this.panel16, 2);
+            this.panel16.Controls.Add(this.tableLayoutPanel8);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(3, 278);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(1424, 54);
+            this.panel16.TabIndex = 2;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 5;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.Controls.Add(this.panel17, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.panel18, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.panel19, 4, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1424, 54);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.tableLayoutPanel9);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel17.Location = new System.Drawing.Point(3, 3);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(465, 48);
+            this.panel17.TabIndex = 0;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel9.Controls.Add(this.panel20, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.panel21, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(465, 48);
+            this.tableLayoutPanel9.TabIndex = 0;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.trkbar_brightness);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(96, 3);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(366, 42);
+            this.panel20.TabIndex = 0;
+            // 
+            // trkbar_brightness
+            // 
+            this.trkbar_brightness.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trkbar_brightness.Location = new System.Drawing.Point(0, 0);
+            this.trkbar_brightness.Maximum = 100;
+            this.trkbar_brightness.Minimum = -100;
+            this.trkbar_brightness.Name = "trkbar_brightness";
+            this.trkbar_brightness.Size = new System.Drawing.Size(366, 42);
+            this.trkbar_brightness.TabIndex = 0;
+            this.trkbar_brightness.Scroll += new System.EventHandler(this.trkbar_brightness_Scroll);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.lbl_brightness);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel21.Location = new System.Drawing.Point(3, 3);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(87, 42);
+            this.panel21.TabIndex = 1;
+            // 
+            // lbl_brightness
+            // 
+            this.lbl_brightness.AutoSize = true;
+            this.lbl_brightness.Location = new System.Drawing.Point(12, 11);
+            this.lbl_brightness.Name = "lbl_brightness";
+            this.lbl_brightness.Size = new System.Drawing.Size(76, 20);
+            this.lbl_brightness.TabIndex = 0;
+            this.lbl_brightness.Text = "Brightess";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.tableLayoutPanel10);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(479, 3);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(465, 48);
+            this.panel18.TabIndex = 1;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel10.Controls.Add(this.panel22, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.panel23, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(465, 48);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.trkbar_contrast);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel22.Location = new System.Drawing.Point(96, 3);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(366, 42);
+            this.panel22.TabIndex = 0;
+            // 
+            // trkbar_contrast
+            // 
+            this.trkbar_contrast.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trkbar_contrast.Location = new System.Drawing.Point(0, 0);
+            this.trkbar_contrast.Maximum = 200;
+            this.trkbar_contrast.Minimum = -100;
+            this.trkbar_contrast.Name = "trkbar_contrast";
+            this.trkbar_contrast.Size = new System.Drawing.Size(366, 42);
+            this.trkbar_contrast.TabIndex = 0;
+            this.trkbar_contrast.Value = 100;
+            this.trkbar_contrast.Scroll += new System.EventHandler(this.trkbar_contrast_Scroll);
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.lbl_contrast);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(3, 3);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(87, 42);
+            this.panel23.TabIndex = 1;
+            // 
+            // lbl_contrast
+            // 
+            this.lbl_contrast.AutoSize = true;
+            this.lbl_contrast.Location = new System.Drawing.Point(12, 11);
+            this.lbl_contrast.Name = "lbl_contrast";
+            this.lbl_contrast.Size = new System.Drawing.Size(70, 20);
+            this.lbl_contrast.TabIndex = 0;
+            this.lbl_contrast.Text = "Contrast";
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.tableLayoutPanel11);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel19.Location = new System.Drawing.Point(955, 3);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(466, 48);
+            this.panel19.TabIndex = 2;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel11.Controls.Add(this.panel24, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.panel25, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(466, 48);
+            this.tableLayoutPanel11.TabIndex = 1;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.trkbar_hue);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel24.Location = new System.Drawing.Point(96, 3);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(367, 42);
+            this.panel24.TabIndex = 0;
+            // 
+            // trkbar_hue
+            // 
+            this.trkbar_hue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trkbar_hue.Location = new System.Drawing.Point(0, 0);
+            this.trkbar_hue.Maximum = 100;
+            this.trkbar_hue.Minimum = -100;
+            this.trkbar_hue.Name = "trkbar_hue";
+            this.trkbar_hue.Size = new System.Drawing.Size(367, 42);
+            this.trkbar_hue.TabIndex = 0;
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.label2);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(3, 3);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(87, 42);
+            this.panel25.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Hue";
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1436, 273);
+            this.tabPage1.Size = new System.Drawing.Size(1436, 341);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ToDo";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -548,8 +802,8 @@ namespace ColourChanger
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.13009F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.86991F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1450, 761);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
@@ -563,12 +817,12 @@ namespace ColourChanger
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.picbx_Original, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.picbx_result, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 317);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 385);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1442, 439);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1442, 371);
             this.tableLayoutPanel4.TabIndex = 16;
             // 
             // picbx_Original
@@ -577,7 +831,7 @@ namespace ColourChanger
             this.picbx_Original.Location = new System.Drawing.Point(4, 5);
             this.picbx_Original.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picbx_Original.Name = "picbx_Original";
-            this.picbx_Original.Size = new System.Drawing.Size(713, 429);
+            this.picbx_Original.Size = new System.Drawing.Size(713, 361);
             this.picbx_Original.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbx_Original.TabIndex = 3;
             this.picbx_Original.TabStop = false;
@@ -588,7 +842,7 @@ namespace ColourChanger
             this.picbx_result.Location = new System.Drawing.Point(725, 5);
             this.picbx_result.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picbx_result.Name = "picbx_result";
-            this.picbx_result.Size = new System.Drawing.Size(713, 429);
+            this.picbx_result.Size = new System.Drawing.Size(713, 361);
             this.picbx_result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbx_result.TabIndex = 4;
             this.picbx_result.TabStop = false;
@@ -622,6 +876,29 @@ namespace ColourChanger
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbar_brightness)).EndInit();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbar_contrast)).EndInit();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkbar_hue)).EndInit();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -645,15 +922,10 @@ namespace ColourChanger
         private System.Windows.Forms.ComboBox cmbobx_ColourFilters;
         private System.Windows.Forms.TabPage tab_filters;
         private System.Windows.Forms.DataGridView dgv_ColourFiltersData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RedByte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GreenByte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BlueByte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AlphaByte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NotUsed;
         private System.Windows.Forms.Label lbl_filter_name;
         private System.Windows.Forms.Button btn_update_filter;
         private System.Windows.Forms.Button btn_delete_filter;
-        private System.Windows.Forms.Button btn_new_filter;
+        private System.Windows.Forms.Button btn_add_filter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
@@ -682,6 +954,31 @@ namespace ColourChanger
         private System.Windows.Forms.Button btn_save_image;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button btn_apply_filter;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.TrackBar trkbar_brightness;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label lbl_brightness;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RedByte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GreenByte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BlueByte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AlphaByte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Brightness;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.TrackBar trkbar_contrast;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label lbl_contrast;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.TrackBar trkbar_hue;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Label label2;
     }
 }
 

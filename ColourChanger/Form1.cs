@@ -53,6 +53,9 @@ namespace ColourChanger
         private void cmbobx_ColourFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
+            trkbar_brightness.Value = 0;
+            trkbar_contrast.Value = 100;
+            ApplyFilterToImage();
         }
 
         private void btn_open_image_Click(object sender, EventArgs e)
@@ -86,7 +89,31 @@ namespace ColourChanger
         private void btn_reset_Click(object sender, EventArgs e)
         {
             PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
+            trkbar_brightness.Value = 0;
+            trkbar_contrast.Value = 100;
             ApplyFilterToImage();
         }
+
+        private void trkbar_brightness_Scroll(object sender, EventArgs e)
+        {
+            GC.Collect();
+            float brightnessValue = (float) (trkbar_brightness.Value) / 100;
+            dgv_ColourFiltersData[4, 0].Value = brightnessValue;
+            dgv_ColourFiltersData[4, 1].Value = brightnessValue;
+            dgv_ColourFiltersData[4, 2].Value = brightnessValue;
+            ApplyFilterToImage();
+        }
+
+        private void trkbar_contrast_Scroll(object sender, EventArgs e)
+        {
+            GC.Collect();
+            float contrastValue = (float)(trkbar_contrast.Value) / 100;
+            dgv_ColourFiltersData[0, 0].Value = contrastValue;
+            dgv_ColourFiltersData[1, 1].Value = contrastValue;
+            dgv_ColourFiltersData[2, 2].Value = contrastValue;
+            ApplyFilterToImage();
+        }
+
+        
     }
 }

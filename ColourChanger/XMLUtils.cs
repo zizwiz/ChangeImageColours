@@ -95,15 +95,16 @@ namespace ColourChanger
         }
 
         /// <summary>
-        /// Creating a New Filter and adding it to the XML file
+        /// Add a new Filter to the XML file
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_new_filter_Click(object sender, EventArgs e)
+        private void btn_add_filter_Click(object sender, EventArgs e)
         {
+
             string myFilterName;
 
-            if (btn_new_filter.Text == "Create New Filter") //If it is add then we ask for a name
+            if (btn_add_filter.Text == "Add Filter") //If it is add then we ask for a name
             {
                 //create a dialog and get the name entered on it
                 var filterNameForm = new FilterName();
@@ -135,12 +136,12 @@ namespace ColourChanger
 
 
                 GC.Collect();
-                btn_new_filter.Text = "Save";
-            }
-            else if (btn_new_filter.Text == "Save")// if it is save then we save the new aircraft and its information
-            {
+            //    btn_add_filter.Text = "Save";
+            //}
+            //else if (btn_add_filter.Text == "Save")// if it is save then we save the new aircraft and its information
+            //{
                 SaveData(lbl_filter_name.Text);
-                btn_new_filter.Text = "Create New Filter";
+                btn_add_filter.Text = "Create New Filter";
                 btn_delete_filter.Visible = true;
                 btn_update_filter.Visible = true;
 
@@ -297,7 +298,7 @@ namespace ColourChanger
         private bool DeleteData(string FilterName)
         {
             bool areYouSure = true;
-            
+
             //create a dialog to ask if user is sure they want to delete aircraft
             var AreYouSureForm = new AreYouSure(FilterName);
             AreYouSureForm.ShowDialog();
