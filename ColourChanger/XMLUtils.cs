@@ -101,56 +101,50 @@ namespace ColourChanger
         /// <param name="e"></param>
         private void btn_add_filter_Click(object sender, EventArgs e)
         {
-
             string myFilterName;
+            
+            //create a dialog and get the name entered on it
+            var filterNameForm = new FilterName();
+            filterNameForm.ShowDialog();
+            myFilterName = filterNameForm.myFilterName;
 
-            if (btn_add_filter.Text == "Add Filter") //If it is add then we ask for a name
+            btn_delete_filter.Visible = false;
+            btn_update_filter.Visible = false;
+
+            // Check if the name already exists. If it does let user know and do nothing
+            //If name does not exist then we can do some work to add it.
+
+            if (myFilterName == "error")
             {
-                //create a dialog and get the name entered on it
-                var filterNameForm = new FilterName();
-                filterNameForm.ShowDialog();
-                myFilterName = filterNameForm.myFilterName;
+                return; //Something wrong so do nothing
+            }
 
-                btn_delete_filter.Visible = false;
-                btn_update_filter.Visible = false;
-
-                // Check if the name already exists. If it does let user know and do nothing
-                //If name does not exist then we can do some work to add it.
-
-                if (myFilterName == "error")
-                {
-                    return; //Something wrong so do nothing
-                }
-
-                if (CheckIfFilterNamExists(myFilterName))
-                {
-                    MsgBox.Show("Cannot add as named filter already exists\rChoose filter and use update",
-                        "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    btn_delete_filter.Visible = true;
-                    btn_update_filter.Visible = true;
-                    return;
-                }
-
-                lbl_filter_name.Text = myFilterName;
-
-
-                GC.Collect();
-            //    btn_add_filter.Text = "Save";
-            //}
-            //else if (btn_add_filter.Text == "Save")// if it is save then we save the new aircraft and its information
-            //{
-                SaveData(lbl_filter_name.Text);
-                btn_add_filter.Text = "Create New Filter";
+            if (CheckIfFilterNamExists(myFilterName))
+            {
+                MsgBox.Show("Cannot add as named filter already exists\rChoose filter and use update",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btn_delete_filter.Visible = true;
                 btn_update_filter.Visible = true;
-
-                //repopulate the combo box.
-                //Start thread to populate the colour filter combobox
-                //Watch cross threading
-                Thread myThread = new Thread(() => PopulateColourFiltersCmboBx(lbl_filter_name.Text));
-                myThread.Start();
+                return;
             }
+
+            lbl_filter_name.Text = myFilterName;
+            
+            //Collect garbage to prevent running out of memory
+            GC.Collect();
+           
+            SaveData(lbl_filter_name.Text);
+            btn_add_filter.Text = "Create New Filter";
+            btn_delete_filter.Visible = true;
+            btn_update_filter.Visible = true;
+
+            //repopulate the combo box.
+            //Start thread to populate the colour filter combobox
+            //Watch cross threading
+            Thread myThread = new Thread(() => PopulateColourFiltersCmboBx(lbl_filter_name.Text));
+            myThread.Start();
+
         }
 
         private bool CheckIfFilterNamExists(string myFilterName)
@@ -220,6 +214,11 @@ namespace ColourChanger
 
         private void btn_update_filter_Click(object sender, EventArgs e)
         {
+            DialogResult result = MsgBox.Show("Are you sure you wish to update an existing filter?", "Question", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.No) return;
+
             string FilterName = cmbobx_ColourFilters.Text;
 
             if (FilterName == "Reset")

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using ColourChanger.libraries;
 using help_about;
 
 
@@ -114,6 +116,65 @@ namespace ColourChanger
             ApplyFilterToImage();
         }
 
-        
+        private void btn_save_image_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|Exif Image|*.exif|" +
+                                    "Png Image|*.png|Tiff Image| *.tiff";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.Title = "Save an Image File";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+               Image  myImage = picbx_result.Image;
+                string myFilename = saveFileDialog.FileName;
+
+
+                string extension = Path.GetExtension(myFilename);
+
+                // switch (extension.ToLower())
+                switch (saveFileDialog.FilterIndex.ToString())
+                {
+                    case "2":
+                        myImage.Save(myFilename, ImageFormat.Bmp);
+                        break;
+                    case "4":
+                        myImage.Save(myFilename, ImageFormat.Exif);
+                        break;
+                    case "3":
+                        myImage.Save(myFilename, ImageFormat.Gif);
+                        break;
+                    case "1":
+                        myImage.Save(myFilename, ImageFormat.Jpeg);
+                        break;
+                    case "5":
+                        myImage.Save(myFilename, ImageFormat.Png);
+                        break;
+                    case "6":
+                         myImage.Save(myFilename, ImageFormat.Tiff);
+                        break;
+                    default:
+                        throw new NotSupportedException(
+                            "Unknown file extension " + extension);
+                }
+            }
+        }
+
+       
+        private void btn_adjust_Click(object sender, EventArgs e)
+        {
+             picbx_result.Image = ColourBalance.AdjustCyan((Bitmap)picbx_Original.Image, double.Parse(txtbx_adjust_value.Text));
+
+
+            // picbx_result.Image = AdjustImageTone.FlatCorrection((Bitmap) picbx_Original.Image, double.Parse(txtbx_adjust_value.Text));
+
+
+
+            //cmbobx_ColourFilters.Text = "Grey Scale";
+            //picbx_result.Image = GreyscaleMorphology.MorphologicalSmoothing((Bitmap)picbx_result.Image);
+
+
+            //  picbx_result.Image = FalseColour.Pseudocolourise((Bitmap) picbx_Original.Image); 
+        }
     }
 }

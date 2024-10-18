@@ -61,6 +61,8 @@ namespace ColourChanger
             this.btn_update_filter = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btn_add_filter = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.btn_adjust = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -94,6 +96,8 @@ namespace ColourChanger
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.picbx_Original = new System.Windows.Forms.PictureBox();
             this.picbx_result = new System.Windows.Forms.PictureBox();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.txtbx_adjust_value = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tab_filters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -110,6 +114,7 @@ namespace ColourChanger
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel26.SuspendLayout();
             this.panel16.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -137,6 +142,7 @@ namespace ColourChanger
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).BeginInit();
+            this.panel27.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -211,6 +217,8 @@ namespace ColourChanger
             // 
             this.dgv_ColourFiltersData.AllowUserToAddRows = false;
             this.dgv_ColourFiltersData.AllowUserToDeleteRows = false;
+            this.dgv_ColourFiltersData.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_ColourFiltersData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ColourFiltersData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ColourFiltersData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RedByte,
@@ -336,6 +344,8 @@ namespace ColourChanger
             this.tableLayoutPanel7.Controls.Add(this.panel10, 5, 2);
             this.tableLayoutPanel7.Controls.Add(this.panel11, 3, 2);
             this.tableLayoutPanel7.Controls.Add(this.panel12, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.panel26, 5, 4);
+            this.tableLayoutPanel7.Controls.Add(this.panel27, 3, 4);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 56);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -411,6 +421,7 @@ namespace ColourChanger
             this.lbl_filter_name.Size = new System.Drawing.Size(51, 20);
             this.lbl_filter_name.TabIndex = 2;
             this.lbl_filter_name.Text = "label1";
+            this.lbl_filter_name.Visible = false;
             // 
             // panel10
             // 
@@ -468,6 +479,25 @@ namespace ColourChanger
             this.btn_add_filter.Text = "Add Filter";
             this.btn_add_filter.UseVisualStyleBackColor = true;
             this.btn_add_filter.Click += new System.EventHandler(this.btn_add_filter_Click);
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.btn_adjust);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel26.Location = new System.Drawing.Point(378, 145);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(174, 62);
+            this.panel26.TabIndex = 13;
+            // 
+            // btn_adjust
+            // 
+            this.btn_adjust.Location = new System.Drawing.Point(18, 10);
+            this.btn_adjust.Name = "btn_adjust";
+            this.btn_adjust.Size = new System.Drawing.Size(138, 43);
+            this.btn_adjust.TabIndex = 5;
+            this.btn_adjust.Text = "Adjust";
+            this.btn_adjust.UseVisualStyleBackColor = true;
+            this.btn_adjust.Click += new System.EventHandler(this.btn_adjust_Click);
             // 
             // panel16
             // 
@@ -678,7 +708,7 @@ namespace ColourChanger
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 11);
+            this.label2.Location = new System.Drawing.Point(45, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 0;
@@ -791,6 +821,7 @@ namespace ColourChanger
             this.btn_save_image.TabIndex = 1;
             this.btn_save_image.Text = "Save Image";
             this.btn_save_image.UseVisualStyleBackColor = true;
+            this.btn_save_image.Click += new System.EventHandler(this.btn_save_image_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -828,6 +859,7 @@ namespace ColourChanger
             // picbx_Original
             // 
             this.picbx_Original.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picbx_Original.Image = global::ColourChanger.Properties.Resources.image;
             this.picbx_Original.Location = new System.Drawing.Point(4, 5);
             this.picbx_Original.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picbx_Original.Name = "picbx_Original";
@@ -846,6 +878,23 @@ namespace ColourChanger
             this.picbx_result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picbx_result.TabIndex = 4;
             this.picbx_result.TabStop = false;
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.txtbx_adjust_value);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel27.Location = new System.Drawing.Point(193, 145);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(174, 62);
+            this.panel27.TabIndex = 14;
+            // 
+            // txtbx_adjust_value
+            // 
+            this.txtbx_adjust_value.Location = new System.Drawing.Point(24, 14);
+            this.txtbx_adjust_value.Name = "txtbx_adjust_value";
+            this.txtbx_adjust_value.Size = new System.Drawing.Size(110, 26);
+            this.txtbx_adjust_value.TabIndex = 0;
+            this.txtbx_adjust_value.Text = "0";
             // 
             // Form1
             // 
@@ -876,6 +925,7 @@ namespace ColourChanger
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel26.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
@@ -909,6 +959,8 @@ namespace ColourChanger
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).EndInit();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -979,6 +1031,10 @@ namespace ColourChanger
         private System.Windows.Forms.TrackBar trkbar_hue;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Button btn_adjust;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.TextBox txtbx_adjust_value;
     }
 }
 
