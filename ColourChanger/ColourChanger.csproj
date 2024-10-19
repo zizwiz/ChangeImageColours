@@ -80,12 +80,17 @@
     </Compile>
     <Compile Include="libraries\AdjustImageTone.cs" />
     <Compile Include="libraries\ColourBalance.cs" />
+    <Compile Include="libraries\Enhance.cs" />
+    <Compile Include="libraries\Erosion.cs" />
     <Compile Include="libraries\FalseColour.cs" />
     <Compile Include="libraries\GreyscaleMorphology.cs" />
     <Compile Include="libraries\Skeletonise.cs" />
+    <Compile Include="libraries\Watermark.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\BitmapUtils.cs" />
     <Compile Include="utils\MsgBox.cs" />
+    <Compile Include="utils\NumberUtils.cs" />
     <Compile Include="utils\StringUtils.cs" />
     <Compile Include="utils\Win32.cs" />
     <Compile Include="XMLUtils.cs">

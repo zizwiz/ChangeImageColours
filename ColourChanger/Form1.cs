@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using ColourChanger.libraries;
+using ColourChanger.utils;
 using help_about;
 
 
@@ -163,7 +164,7 @@ namespace ColourChanger
        
         private void btn_adjust_Click(object sender, EventArgs e)
         {
-             picbx_result.Image = ColourBalance.AdjustCyan((Bitmap)picbx_Original.Image, double.Parse(txtbx_adjust_value.Text));
+            // picbx_result.Image = ColourBalance.AdjustCyan((Bitmap)picbx_Original.Image, double.Parse(txtbx_adjust_value.Text));
 
 
             // picbx_result.Image = AdjustImageTone.FlatCorrection((Bitmap) picbx_Original.Image, double.Parse(txtbx_adjust_value.Text));
@@ -175,6 +176,28 @@ namespace ColourChanger
 
 
             //  picbx_result.Image = FalseColour.Pseudocolourise((Bitmap) picbx_Original.Image); 
+
+            //if (NumberUtils.isInteger(txtbx_adjust_value))
+            //{
+            //    picbx_result.Image =
+            //        Erosion.ErodeBitmap((Bitmap) picbx_Original.Image, int.Parse(txtbx_adjust_value.Text));
+            //}
+
+            //enhance
+            //if (NumberUtils.isInteger(txtbx_adjust_value))
+            //{
+            //    picbx_result.Image =
+            //        Enhance.EnhanceBitmap((Bitmap)picbx_Original.Image, int.Parse(txtbx_adjust_value.Text));
+            //}
+
+            //watermark
+
+            //picbx_result.Image = Watermark.AddVisibleWatermark((Bitmap) picbx_Original.Image, BitmapUtils.ConvertToBitmap("Watermark.jpg"),
+            //    int.Parse(txtbx_adjust_value.Text));
+
+           picbx_result.Image = Watermark.AddInvisibleWatermark((Bitmap)picbx_Original.Image, BitmapUtils.ConvertToBitmap("Watermark.jpg"));
+
+            GC.Collect();
         }
     }
 }
