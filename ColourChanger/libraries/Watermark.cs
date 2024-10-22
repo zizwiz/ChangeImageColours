@@ -135,6 +135,37 @@ namespace ColourChanger.libraries
         }
 
 
+        // Copy the watermark image over the result image.
+        public static Bitmap DrawWatermark(Bitmap myWatermarkBitmap, Bitmap myBitmap, int x, int y)
+        {
+            //Initialise the bitmap we will return
+            Bitmap resultBitmap = myBitmap;
 
+            // Make a ColorMatrix that multiplies
+            // the alpha component by 0.5.
+            ColorMatrix color_matrix = new ColorMatrix();
+            color_matrix.Matrix33 = 0.5f;
+
+            // Make an ImageAttributes that uses the ColorMatrix.
+            ImageAttributes image_attributes = new ImageAttributes();
+            image_attributes.SetColorMatrices(color_matrix, null);
+
+            // Make pixels that are the same color as the
+            // one in the upper left transparent.
+            myWatermarkBitmap.MakeTransparent(myWatermarkBitmap.GetPixel(0, 0));
+
+            // Draw the image using the ColorMatrix.
+            using (Graphics gr = Graphics.FromImage(myBitmap))
+            {
+                Rectangle rect = new Rectangle(x, y, myWatermarkBitmap.Width, myWatermarkBitmap.Height);
+
+                gr.DrawImage(myWatermarkBitmap, rect, 0, 0, myWatermarkBitmap.Width, myWatermarkBitmap.Height,
+                    GraphicsUnit.Pixel, image_attributes);
+
+                resultBitmap = new Bitmap(myBitmap.Width, myBitmap.Height,  gr);
+            }
+
+            return resultBitmap;
+        }
     }
 }

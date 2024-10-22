@@ -192,11 +192,32 @@ namespace ColourChanger
 
             //watermark
 
-            //picbx_result.Image = Watermark.AddVisibleWatermark((Bitmap) picbx_Original.Image, BitmapUtils.ConvertToBitmap("Watermark.jpg"),
+            //picbx_result.Image = Watermark.AddVisibleWatermark((Bitmap)picbx_Original.Image, BitmapUtils.ConvertToBitmap("Watermark.jpg"),
             //    int.Parse(txtbx_adjust_value.Text));
 
-           picbx_result.Image = Watermark.AddInvisibleWatermark((Bitmap)picbx_Original.Image, BitmapUtils.ConvertToBitmap("Watermark.jpg"));
 
+            //picbx_result.Image = Watermark.AddInvisibleWatermark((Bitmap)picbx_Original.Image, BitmapUtils.ConvertToBitmap("Watermark.jpg"));
+
+            //picbx_result.Image = Watermark.AddVisibleWatermark((Bitmap)picbx_Original.Image, BitmapUtils.ScaleWatermarkBitmap("watermark2.jpg", (Bitmap)picbx_Original.Image),
+            //    int.Parse(txtbx_adjust_value.Text));
+
+            //create a scaled watermark
+            //BitmapUtils.ScaleWatermarkBitmap("watermark2.jpg", (Bitmap)picbx_Original.Image);
+
+           // picbx_result.Image = null;
+
+            //var x = (picbx_Original.Image.Width - BitmapUtils.ConvertToBitmap("Watermark2.jpg").Width) / 2;
+            //var y = (picbx_Original.Image.Height - BitmapUtils.ConvertToBitmap("Watermark2.jpg").Height) / 2;
+
+            //picbx_result.Image = Watermark.DrawWatermark(BitmapUtils.ScaleWatermarkBitmap("watermark2.jpg", (Bitmap)picbx_Original.Image), (Bitmap) picbx_Original.Image, x, y);
+            //ApplyFilterToImage();
+
+            //superimpose image
+            picbx_result.Image = null;
+            picbx_result.Image = BitmapUtils.Superimpose((Bitmap) picbx_Original.Image,
+                BitmapUtils.ConvertToBitmap("Watermark2.jpg"));
+
+            ApplyFilterToImage();
             GC.Collect();
         }
     }
