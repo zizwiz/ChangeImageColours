@@ -58,7 +58,7 @@ namespace ColourChanger
             PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
             trkbar_brightness.Value = 0;
             trkbar_contrast.Value = 100;
-            ApplyFilterToImage();
+            ApplyFilterToImage(0);
         }
 
         private void btn_open_image_Click(object sender, EventArgs e)
@@ -79,22 +79,23 @@ namespace ColourChanger
 
                 string myFileName = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
 
-                ApplyFilterToImage();
+                ApplyFilterToImage(0);
             }
 
         }
 
         private void btn_apply_filter_Click(object sender, EventArgs e)
         {
-            ApplyFilterToImage();
+            ApplyFilterToImage(0);
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
         {
+            cmbobx_ColourFilters.Text = "Reset";
             PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
             trkbar_brightness.Value = 0;
             trkbar_contrast.Value = 100;
-            ApplyFilterToImage();
+            ApplyFilterToImage(1);
         }
 
         private void trkbar_brightness_Scroll(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace ColourChanger
             dgv_ColourFiltersData[4, 0].Value = brightnessValue;
             dgv_ColourFiltersData[4, 1].Value = brightnessValue;
             dgv_ColourFiltersData[4, 2].Value = brightnessValue;
-            ApplyFilterToImage();
+            ApplyFilterToImage(0);
         }
 
         private void trkbar_contrast_Scroll(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace ColourChanger
             dgv_ColourFiltersData[0, 0].Value = contrastValue;
             dgv_ColourFiltersData[1, 1].Value = contrastValue;
             dgv_ColourFiltersData[2, 2].Value = contrastValue;
-            ApplyFilterToImage();
+            ApplyFilterToImage(0);
         }
 
         private void btn_save_image_Click(object sender, EventArgs e)
@@ -204,7 +205,7 @@ namespace ColourChanger
             //create a scaled watermark
             //BitmapUtils.ScaleWatermarkBitmap("watermark2.jpg", (Bitmap)picbx_Original.Image);
 
-           // picbx_result.Image = null;
+            // picbx_result.Image = null;
 
             //var x = (picbx_Original.Image.Width - BitmapUtils.ConvertToBitmap("Watermark2.jpg").Width) / 2;
             //var y = (picbx_Original.Image.Height - BitmapUtils.ConvertToBitmap("Watermark2.jpg").Height) / 2;
@@ -213,11 +214,21 @@ namespace ColourChanger
             //ApplyFilterToImage();
 
             //superimpose image
-            picbx_result.Image = null;
-            picbx_result.Image = BitmapUtils.Superimpose((Bitmap) picbx_Original.Image,
-                BitmapUtils.ConvertToBitmap("Watermark2.jpg"));
+            //picbx_result.Image = null;
+            //picbx_result.Image = BitmapUtils.Superimpose((Bitmap) picbx_Original.Image,
+            //    BitmapUtils.ConvertToBitmap("Watermark2.jpg"));
 
-            ApplyFilterToImage();
+            //ApplyFilterToImage();
+
+            //colour palette
+
+            ColorDialog myColorDialog = new ColorDialog();
+
+            if (myColorDialog.ShowDialog() == DialogResult.OK)
+            {
+                btn_adjust.BackColor = myColorDialog.Color;
+            }
+
             GC.Collect();
         }
     }

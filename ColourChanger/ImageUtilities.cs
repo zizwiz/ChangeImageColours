@@ -18,7 +18,7 @@ namespace ColourChanger
         }
 
         // Apply filter to the image.
-        private void ApplyFilterToImage()
+        private void ApplyFilterToImage(int myChoice)
         {
             if (picbx_Original.Image == null)
             {
@@ -27,11 +27,21 @@ namespace ColourChanger
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; //If no image do nothing
             }
-            
-            picbx_result.Invalidate();
-            picbx_result.Image = AdjustColor(picbx_Original.Image);
-            
-            
+
+            if (myChoice == 1) chkbx_reset.Checked = true; // reset button pressed
+
+
+            if (chkbx_reset.Checked)
+            {
+                picbx_result.Invalidate();
+                picbx_result.Image = AdjustColor(picbx_Original.Image); // Each change on original each time
+            }
+            else
+            {
+                picbx_result.Image = AdjustColor(picbx_result.Image); //Superimpose each change on last change
+            }
+
+
             //mnuFileSaveAs.Enabled = (picbx_result.Image != null);
         }
 

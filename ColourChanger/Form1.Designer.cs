@@ -63,6 +63,8 @@ namespace ColourChanger
             this.btn_add_filter = new System.Windows.Forms.Button();
             this.panel26 = new System.Windows.Forms.Panel();
             this.btn_adjust = new System.Windows.Forms.Button();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.txtbx_adjust_value = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -96,8 +98,7 @@ namespace ColourChanger
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.picbx_Original = new System.Windows.Forms.PictureBox();
             this.picbx_result = new System.Windows.Forms.PictureBox();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.txtbx_adjust_value = new System.Windows.Forms.TextBox();
+            this.chkbx_reset = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tab_filters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -115,6 +116,7 @@ namespace ColourChanger
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel26.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.panel16.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -142,7 +144,6 @@ namespace ColourChanger
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).BeginInit();
-            this.panel27.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -406,6 +407,7 @@ namespace ColourChanger
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.chkbx_reset);
             this.panel9.Controls.Add(this.lbl_filter_name);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(8, 145);
@@ -498,6 +500,23 @@ namespace ColourChanger
             this.btn_adjust.Text = "Adjust";
             this.btn_adjust.UseVisualStyleBackColor = true;
             this.btn_adjust.Click += new System.EventHandler(this.btn_adjust_Click);
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.txtbx_adjust_value);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel27.Location = new System.Drawing.Point(193, 145);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(174, 62);
+            this.panel27.TabIndex = 14;
+            // 
+            // txtbx_adjust_value
+            // 
+            this.txtbx_adjust_value.Location = new System.Drawing.Point(24, 14);
+            this.txtbx_adjust_value.Name = "txtbx_adjust_value";
+            this.txtbx_adjust_value.Size = new System.Drawing.Size(110, 26);
+            this.txtbx_adjust_value.TabIndex = 0;
+            this.txtbx_adjust_value.Text = "0";
             // 
             // panel16
             // 
@@ -879,22 +898,17 @@ namespace ColourChanger
             this.picbx_result.TabIndex = 4;
             this.picbx_result.TabStop = false;
             // 
-            // panel27
+            // chkbx_reset
             // 
-            this.panel27.Controls.Add(this.txtbx_adjust_value);
-            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel27.Location = new System.Drawing.Point(193, 145);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(174, 62);
-            this.panel27.TabIndex = 14;
-            // 
-            // txtbx_adjust_value
-            // 
-            this.txtbx_adjust_value.Location = new System.Drawing.Point(24, 14);
-            this.txtbx_adjust_value.Name = "txtbx_adjust_value";
-            this.txtbx_adjust_value.Size = new System.Drawing.Size(110, 26);
-            this.txtbx_adjust_value.TabIndex = 0;
-            this.txtbx_adjust_value.Text = "0";
+            this.chkbx_reset.AutoSize = true;
+            this.chkbx_reset.Checked = true;
+            this.chkbx_reset.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkbx_reset.Location = new System.Drawing.Point(18, 18);
+            this.chkbx_reset.Name = "chkbx_reset";
+            this.chkbx_reset.Size = new System.Drawing.Size(82, 24);
+            this.chkbx_reset.TabIndex = 3;
+            this.chkbx_reset.Text = "Reset ";
+            this.chkbx_reset.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -926,6 +940,8 @@ namespace ColourChanger
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
@@ -959,8 +975,6 @@ namespace ColourChanger
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).EndInit();
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1035,6 +1049,7 @@ namespace ColourChanger
         private System.Windows.Forms.Button btn_adjust;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.TextBox txtbx_adjust_value;
+        private System.Windows.Forms.CheckBox chkbx_reset;
     }
 }
 
