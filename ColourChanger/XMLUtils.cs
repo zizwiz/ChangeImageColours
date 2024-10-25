@@ -223,7 +223,14 @@ namespace ColourChanger
 
             if (FilterName == "Reset")
             {
-                MsgBox.Show("Sorry you cannot update the Filter called Reset", "Error", MessageBoxButtons.OK,
+                MsgBox.Show("Sorry you cannot update the Filter called 'Reset'", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if (FilterName == "Choose the filter colour to use")
+            {
+                MsgBox.Show("Sorry you cannot update the Filter called 'Choose the filter colour to use'", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
@@ -279,6 +286,13 @@ namespace ColourChanger
             if (FilterName == "Reset")
             {
                 MsgBox.Show("Sorry you cannot delete the Filter called Reset", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if (FilterName == "Choose the filter colour to use")
+            {
+                MsgBox.Show("Sorry you cannot update the Filter called 'Choose the filter colour to use'", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }

@@ -28,17 +28,25 @@ namespace ColourChanger
                 return; //If no image do nothing
             }
 
-            if (myChoice == 1) chkbx_reset.Checked = true; // reset button pressed
+            if (myChoice == 1) chkbx_Superimpose.Checked = false; // reset button pressed
 
 
-            if (chkbx_reset.Checked)
+            if (!chkbx_Superimpose.Checked)
             {
                 picbx_result.Invalidate();
                 picbx_result.Image = AdjustColor(picbx_Original.Image); // Each change on original each time
             }
             else
             {
-                picbx_result.Image = AdjustColor(picbx_result.Image); //Superimpose each change on last change
+                if (picbx_result.Image != null)
+                {
+                    picbx_result.Image = AdjustColor(picbx_result.Image); //Superimpose each change on last change
+                }
+                else
+                {
+                    picbx_result.Invalidate();
+                    picbx_result.Image = AdjustColor(picbx_Original.Image); //if not result we need to make one
+                }
             }
 
 
@@ -52,6 +60,15 @@ namespace ColourChanger
             ColorMatrix cm = GetColorMatrix();
             ImageAttributes attributes = new ImageAttributes();
             attributes.SetColorMatrix(cm);
+
+            if (chkbx_save_history.Checked)
+            {
+                
+
+
+
+
+            }
 
             // Make the result image.
             return CopyImage(image, attributes);

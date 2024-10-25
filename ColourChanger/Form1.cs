@@ -39,6 +39,8 @@ namespace ColourChanger
             //Watch cross threading
             Thread myThread = new Thread(() => PopulateColourFiltersCmboBx("Reset"));
             myThread.Start();
+
+            
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -52,12 +54,22 @@ namespace ColourChanger
             help.Show();
         }
 
-        // Write data to dataGridView based on the filter choosen in the combobox.
+        // Write data to dataGridView based on the filter chosen in the combobox.
         private void cmbobx_ColourFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopulateColourFiltersDataGridView(cmbobx_ColourFilters.Text);
             trkbar_brightness.Value = 0;
             trkbar_contrast.Value = 100;
+
+            if (cmbobx_ColourFilters.Text == "Choose the filter colour")
+            {
+                //let the user choose the filter colour
+                string[] myColourData = ColouringUtils.ChooseColor();
+                dgv_ColourFiltersData[0, 0].Value = myColourData[0];
+                dgv_ColourFiltersData[1, 1].Value = myColourData[1];
+                dgv_ColourFiltersData[2, 2].Value = myColourData[2];
+                dgv_ColourFiltersData[3, 3].Value = myColourData[3];
+            }
             ApplyFilterToImage(0);
         }
 
@@ -220,16 +232,7 @@ namespace ColourChanger
 
             //ApplyFilterToImage();
 
-            //colour palette
-
-            ColorDialog myColorDialog = new ColorDialog();
-
-            if (myColorDialog.ShowDialog() == DialogResult.OK)
-            {
-                btn_adjust.BackColor = myColorDialog.Color;
-            }
-
-            GC.Collect();
+           GC.Collect();
         }
     }
 }

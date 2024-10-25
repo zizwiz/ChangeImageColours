@@ -54,6 +54,7 @@ namespace ColourChanger
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_reset = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.chkbx_Superimpose = new System.Windows.Forms.CheckBox();
             this.lbl_filter_name = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_delete_filter = new System.Windows.Forms.Button();
@@ -98,7 +99,7 @@ namespace ColourChanger
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.picbx_Original = new System.Windows.Forms.PictureBox();
             this.picbx_result = new System.Windows.Forms.PictureBox();
-            this.chkbx_reset = new System.Windows.Forms.CheckBox();
+            this.chkbx_save_history = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tab_filters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -109,6 +110,7 @@ namespace ColourChanger
             this.panel5.SuspendLayout();
             this.panel15.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -361,6 +363,7 @@ namespace ColourChanger
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.chkbx_Superimpose);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(378, 3);
             this.panel6.Name = "panel6";
@@ -407,13 +410,23 @@ namespace ColourChanger
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.chkbx_reset);
+            this.panel9.Controls.Add(this.chkbx_save_history);
             this.panel9.Controls.Add(this.lbl_filter_name);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(8, 145);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(174, 62);
             this.panel9.TabIndex = 9;
+            // 
+            // chkbx_Superimpose
+            // 
+            this.chkbx_Superimpose.AutoSize = true;
+            this.chkbx_Superimpose.Location = new System.Drawing.Point(26, 18);
+            this.chkbx_Superimpose.Name = "chkbx_Superimpose";
+            this.chkbx_Superimpose.Size = new System.Drawing.Size(129, 24);
+            this.chkbx_Superimpose.TabIndex = 3;
+            this.chkbx_Superimpose.Text = "Superimpose";
+            this.chkbx_Superimpose.UseVisualStyleBackColor = true;
             // 
             // lbl_filter_name
             // 
@@ -898,17 +911,15 @@ namespace ColourChanger
             this.picbx_result.TabIndex = 4;
             this.picbx_result.TabStop = false;
             // 
-            // chkbx_reset
+            // chkbx_save_history
             // 
-            this.chkbx_reset.AutoSize = true;
-            this.chkbx_reset.Checked = true;
-            this.chkbx_reset.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkbx_reset.Location = new System.Drawing.Point(18, 18);
-            this.chkbx_reset.Name = "chkbx_reset";
-            this.chkbx_reset.Size = new System.Drawing.Size(82, 24);
-            this.chkbx_reset.TabIndex = 3;
-            this.chkbx_reset.Text = "Reset ";
-            this.chkbx_reset.UseVisualStyleBackColor = true;
+            this.chkbx_save_history.AutoSize = true;
+            this.chkbx_save_history.Location = new System.Drawing.Point(27, 18);
+            this.chkbx_save_history.Name = "chkbx_save_history";
+            this.chkbx_save_history.Size = new System.Drawing.Size(124, 24);
+            this.chkbx_save_history.TabIndex = 4;
+            this.chkbx_save_history.Text = "Save History";
+            this.chkbx_save_history.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -932,6 +943,8 @@ namespace ColourChanger
             this.panel5.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -1049,7 +1062,8 @@ namespace ColourChanger
         private System.Windows.Forms.Button btn_adjust;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.TextBox txtbx_adjust_value;
-        private System.Windows.Forms.CheckBox chkbx_reset;
+        private System.Windows.Forms.CheckBox chkbx_Superimpose;
+        private System.Windows.Forms.CheckBox chkbx_save_history;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace ColourChanger.utils
 {
@@ -24,6 +25,24 @@ namespace ColourChanger.utils
                 }
             }
             return newBitmap;
+        }
+
+       
+        public static string[] ChooseColor()
+        {
+            string[] myData = new string[4];
+
+            ColorDialog myColorDialog = new ColorDialog();
+
+            if (myColorDialog.ShowDialog() == DialogResult.OK)
+            {
+                myData[0] = (myColorDialog.Color.R / 255f).ToString("f4");
+                myData[1] = (myColorDialog.Color.G / 255f).ToString("f4");
+                myData[2] = (myColorDialog.Color.B / 255f).ToString("f4");
+                myData[3] = (myColorDialog.Color.A / 255f).ToString("f4");
+            }
+
+            return myData;
         }
     }
 }
