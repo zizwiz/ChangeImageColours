@@ -29,6 +29,8 @@ namespace ColourChanger
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_help = new System.Windows.Forms.Button();
@@ -236,6 +238,14 @@ namespace ColourChanger
             this.dgv_ColourFiltersData.AllowUserToDeleteRows = false;
             this.dgv_ColourFiltersData.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_ColourFiltersData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ColourFiltersData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ColourFiltersData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ColourFiltersData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_ColourFiltersData_RedByte,
@@ -894,6 +904,7 @@ namespace ColourChanger
             this.chkbx_save_history.TabIndex = 4;
             this.chkbx_save_history.Text = "Save History";
             this.chkbx_save_history.UseVisualStyleBackColor = true;
+            this.chkbx_save_history.CheckedChanged += new System.EventHandler(this.chkbx_save_history_CheckedChanged);
             // 
             // tableLayoutPanel12
             // 
@@ -933,6 +944,14 @@ namespace ColourChanger
             this.dgv_history.AllowUserToDeleteRows = false;
             this.dgv_history.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_history.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_history.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_history.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgv_history_RedByte,

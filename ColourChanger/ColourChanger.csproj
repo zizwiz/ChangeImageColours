@@ -75,6 +75,7 @@
     <Compile Include="help\Help_Form.Designer.cs">
       <DependentUpon>help_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="history\SaveHistory.cs" />
     <Compile Include="ImageUtilities.cs">
       <SubType>Form</SubType>
     </Compile>

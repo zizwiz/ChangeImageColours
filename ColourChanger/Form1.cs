@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using ColourChanger.history;
 using ColourChanger.libraries;
 using ColourChanger.utils;
 using help_about;
@@ -233,6 +234,26 @@ namespace ColourChanger
             //ApplyFilterToImage();
 
            GC.Collect();
+        }
+
+        private void chkbx_save_history_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbx_save_history.Checked)
+            {
+                SaveFileDialog saveHistoryFileDialog = new SaveFileDialog();
+                saveHistoryFileDialog.Filter = "csv File|*.csv";
+                saveHistoryFileDialog.FilterIndex = 1;
+                saveHistoryFileDialog.Title = "Save History";
+
+                if (saveHistoryFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the filename from the tag
+                    chkbx_save_history.Tag = saveHistoryFileDialog.FileName;
+
+                    //make the file and write the headers to it 
+                    SaveHistory.Save(chkbx_save_history, dgv_history);
+                }
+            }
         }
     }
 }

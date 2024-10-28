@@ -2,6 +2,7 @@
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using CenteredMessagebox;
+using ColourChanger.history;
 
 namespace ColourChanger
 {
@@ -63,8 +64,8 @@ namespace ColourChanger
 
             if (chkbx_save_history.Checked)
             {
-                
 
+                SaveHistory.Update(chkbx_save_history, dgv_ColourFiltersData);
 
 
 
