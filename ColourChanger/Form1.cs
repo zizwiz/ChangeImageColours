@@ -62,7 +62,7 @@ namespace ColourChanger
             trkbar_brightness.Value = 0;
             trkbar_contrast.Value = 100;
 
-            if (cmbobx_ColourFilters.Text == "Choose the filter colour")
+            if (cmbobx_ColourFilters.Text == "Choose the filter colour to use")
             {
                 //let the user choose the filter colour
                 string[] myColourData = ColouringUtils.ChooseColor();
@@ -76,9 +76,14 @@ namespace ColourChanger
 
         private void btn_open_image_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openImageFileDialog = new OpenFileDialog();
+            openImageFileDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|Exif Image|*.exif|" +
+                                         "Png Image|*.png|Tiff Image| *.tiff"; 
+            openImageFileDialog.FilterIndex = 1;
+            openImageFileDialog.Title = "Open Image File";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+
+            if (openImageFileDialog.ShowDialog() == DialogResult.OK)
             {
                 if (picbx_Original.Image != null) //if already an image present then clear it and collect garbage
                 {
@@ -88,9 +93,9 @@ namespace ColourChanger
                 }
 
                 //open the new image
-                picbx_Original.Image = LoadBitmapUnlocked(openFileDialog.FileName);
+                picbx_Original.Image = LoadBitmapUnlocked(openImageFileDialog.FileName);
 
-                string myFileName = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
+                string myFileName = Path.GetFileNameWithoutExtension(openImageFileDialog.FileName);
 
                 ApplyFilterToImage(0);
             }
@@ -241,7 +246,7 @@ namespace ColourChanger
             if (chkbx_save_history.Checked)
             {
                 SaveFileDialog saveHistoryFileDialog = new SaveFileDialog();
-                saveHistoryFileDialog.Filter = "csv File|*.csv";
+                saveHistoryFileDialog.Filter = "cch File|*.cch"; // cch = colour changer history file, just a csv file.
                 saveHistoryFileDialog.FilterIndex = 1;
                 saveHistoryFileDialog.Title = "Save History";
 
@@ -253,6 +258,22 @@ namespace ColourChanger
                     //make the file and write the headers to it 
                     SaveHistory.Save(chkbx_save_history, dgv_history);
                 }
+            }
+        }
+
+        private void btn_open_history_file_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openHistoryFileDialog = new OpenFileDialog();
+            openHistoryFileDialog.Filter = "cch File|*.cch"; // cch = colour changer history file, just a csv file.
+            openHistoryFileDialog.FilterIndex = 1;
+            openHistoryFileDialog.Title = "Open History";
+
+            if (openHistoryFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                OpenHistory.PopulateHistoryDGV(openHistoryFileDialog.FileName, dgv_history);
+
+
             }
         }
     }

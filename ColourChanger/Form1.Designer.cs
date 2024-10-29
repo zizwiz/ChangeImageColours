@@ -112,6 +112,7 @@ namespace ColourChanger
             this.dgv_ColourFiltersData_BlueByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_ColourFiltersData_AlphaByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_ColourFiltersData_Brightness = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_open_history_file = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_filters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -161,6 +162,7 @@ namespace ColourChanger
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             this.panel28.SuspendLayout();
+            this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_history)).BeginInit();
             this.SuspendLayout();
             // 
@@ -932,6 +934,7 @@ namespace ColourChanger
             // 
             // panel29
             // 
+            this.panel29.Controls.Add(this.btn_open_history_file);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel29.Location = new System.Drawing.Point(861, 3);
             this.panel29.Name = "panel29";
@@ -1057,6 +1060,16 @@ namespace ColourChanger
             this.dgv_ColourFiltersData_Brightness.ReadOnly = true;
             this.dgv_ColourFiltersData_Brightness.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // btn_open_history_file
+            // 
+            this.btn_open_history_file.Location = new System.Drawing.Point(62, 74);
+            this.btn_open_history_file.Name = "btn_open_history_file";
+            this.btn_open_history_file.Size = new System.Drawing.Size(88, 37);
+            this.btn_open_history_file.TabIndex = 0;
+            this.btn_open_history_file.Text = "Open";
+            this.btn_open_history_file.UseVisualStyleBackColor = true;
+            this.btn_open_history_file.Click += new System.EventHandler(this.btn_open_history_file_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1127,6 +1140,7 @@ namespace ColourChanger
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.panel28.ResumeLayout(false);
+            this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_history)).EndInit();
             this.ResumeLayout(false);
 
@@ -1214,6 +1228,7 @@ namespace ColourChanger
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_AlphaByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_Brightness;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_FilterName;
+        private System.Windows.Forms.Button btn_open_history_file;
     }
 }
 
