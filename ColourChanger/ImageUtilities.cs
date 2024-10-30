@@ -64,7 +64,7 @@ namespace ColourChanger
 
             if (chkbx_save_history.Checked)
             {
-                SaveHistory.Update(chkbx_save_history, dgv_ColourFiltersData, cmbobx_ColourFilters);
+                SaveHistory.Update(chkbx_save_history, dgv_ColourFiltersData, cmbobx_ColourFilters, chkbx_Superimpose);
             }
 
             // Make the result image.

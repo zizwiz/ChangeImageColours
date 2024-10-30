@@ -39,6 +39,11 @@ namespace ColourChanger
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_ColourFiltersData = new System.Windows.Forms.DataGridView();
+            this.dgv_ColourFiltersData_RedByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ColourFiltersData_GreenByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ColourFiltersData_BlueByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ColourFiltersData_AlphaByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ColourFiltersData_Brightness = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -46,12 +51,13 @@ namespace ColourChanger
             this.cmbobx_ColourFilters = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.chkbx_Superimpose = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btn_apply_filter = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_reset = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.chkbx_Superimpose = new System.Windows.Forms.CheckBox();
+            this.chkbx_save_history = new System.Windows.Forms.CheckBox();
             this.lbl_filter_name = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_delete_filter = new System.Windows.Forms.Button();
@@ -84,6 +90,11 @@ namespace ColourChanger
             this.panel25 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tab_history = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.dgv_history = new System.Windows.Forms.DataGridView();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.btn_open_history_file = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -96,23 +107,13 @@ namespace ColourChanger
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.picbx_Original = new System.Windows.Forms.PictureBox();
             this.picbx_result = new System.Windows.Forms.PictureBox();
-            this.chkbx_save_history = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.dgv_history = new System.Windows.Forms.DataGridView();
             this.dgv_history_RedByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_history_GreenByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_history_BlueByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_history_AlphaByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_history_Brightness = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_history_FilterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_ColourFiltersData_RedByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_ColourFiltersData_GreenByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_ColourFiltersData_BlueByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_ColourFiltersData_AlphaByte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_ColourFiltersData_Brightness = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_open_history_file = new System.Windows.Forms.Button();
+            this.dgv_history_Superimpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tab_filters.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -150,6 +151,10 @@ namespace ColourChanger
             ((System.ComponentModel.ISupportInitialize)(this.trkbar_hue)).BeginInit();
             this.panel25.SuspendLayout();
             this.tab_history.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.panel28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_history)).BeginInit();
+            this.panel29.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -160,10 +165,6 @@ namespace ColourChanger
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).BeginInit();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.panel29.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_history)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -263,6 +264,47 @@ namespace ColourChanger
             this.dgv_ColourFiltersData.Size = new System.Drawing.Size(852, 269);
             this.dgv_ColourFiltersData.TabIndex = 0;
             // 
+            // dgv_ColourFiltersData_RedByte
+            // 
+            this.dgv_ColourFiltersData_RedByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_ColourFiltersData_RedByte.HeaderText = "Red Byte";
+            this.dgv_ColourFiltersData_RedByte.MinimumWidth = 8;
+            this.dgv_ColourFiltersData_RedByte.Name = "dgv_ColourFiltersData_RedByte";
+            this.dgv_ColourFiltersData_RedByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgv_ColourFiltersData_GreenByte
+            // 
+            this.dgv_ColourFiltersData_GreenByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_ColourFiltersData_GreenByte.HeaderText = "Green Byte";
+            this.dgv_ColourFiltersData_GreenByte.MinimumWidth = 8;
+            this.dgv_ColourFiltersData_GreenByte.Name = "dgv_ColourFiltersData_GreenByte";
+            this.dgv_ColourFiltersData_GreenByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgv_ColourFiltersData_BlueByte
+            // 
+            this.dgv_ColourFiltersData_BlueByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_ColourFiltersData_BlueByte.HeaderText = "Blue Byte";
+            this.dgv_ColourFiltersData_BlueByte.MinimumWidth = 8;
+            this.dgv_ColourFiltersData_BlueByte.Name = "dgv_ColourFiltersData_BlueByte";
+            this.dgv_ColourFiltersData_BlueByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgv_ColourFiltersData_AlphaByte
+            // 
+            this.dgv_ColourFiltersData_AlphaByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_ColourFiltersData_AlphaByte.HeaderText = "Alpha Byte";
+            this.dgv_ColourFiltersData_AlphaByte.MinimumWidth = 8;
+            this.dgv_ColourFiltersData_AlphaByte.Name = "dgv_ColourFiltersData_AlphaByte";
+            this.dgv_ColourFiltersData_AlphaByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgv_ColourFiltersData_Brightness
+            // 
+            this.dgv_ColourFiltersData_Brightness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_ColourFiltersData_Brightness.HeaderText = "Brightness";
+            this.dgv_ColourFiltersData_Brightness.MinimumWidth = 8;
+            this.dgv_ColourFiltersData_Brightness.Name = "dgv_ColourFiltersData_Brightness";
+            this.dgv_ColourFiltersData_Brightness.ReadOnly = true;
+            this.dgv_ColourFiltersData_Brightness.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel6);
@@ -355,6 +397,16 @@ namespace ColourChanger
             this.panel6.Size = new System.Drawing.Size(174, 60);
             this.panel6.TabIndex = 6;
             // 
+            // chkbx_Superimpose
+            // 
+            this.chkbx_Superimpose.AutoSize = true;
+            this.chkbx_Superimpose.Location = new System.Drawing.Point(26, 18);
+            this.chkbx_Superimpose.Name = "chkbx_Superimpose";
+            this.chkbx_Superimpose.Size = new System.Drawing.Size(129, 24);
+            this.chkbx_Superimpose.TabIndex = 3;
+            this.chkbx_Superimpose.Text = "Superimpose";
+            this.chkbx_Superimpose.UseVisualStyleBackColor = true;
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.btn_apply_filter);
@@ -403,15 +455,16 @@ namespace ColourChanger
             this.panel9.Size = new System.Drawing.Size(174, 62);
             this.panel9.TabIndex = 9;
             // 
-            // chkbx_Superimpose
+            // chkbx_save_history
             // 
-            this.chkbx_Superimpose.AutoSize = true;
-            this.chkbx_Superimpose.Location = new System.Drawing.Point(26, 18);
-            this.chkbx_Superimpose.Name = "chkbx_Superimpose";
-            this.chkbx_Superimpose.Size = new System.Drawing.Size(129, 24);
-            this.chkbx_Superimpose.TabIndex = 3;
-            this.chkbx_Superimpose.Text = "Superimpose";
-            this.chkbx_Superimpose.UseVisualStyleBackColor = true;
+            this.chkbx_save_history.AutoSize = true;
+            this.chkbx_save_history.Location = new System.Drawing.Point(27, 18);
+            this.chkbx_save_history.Name = "chkbx_save_history";
+            this.chkbx_save_history.Size = new System.Drawing.Size(124, 24);
+            this.chkbx_save_history.TabIndex = 4;
+            this.chkbx_save_history.Text = "Save History";
+            this.chkbx_save_history.UseVisualStyleBackColor = true;
+            this.chkbx_save_history.CheckedChanged += new System.EventHandler(this.chkbx_save_history_CheckedChanged);
             // 
             // lbl_filter_name
             // 
@@ -742,6 +795,80 @@ namespace ColourChanger
             this.tab_history.Text = "History";
             this.tab_history.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel12.Controls.Add(this.panel28, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.panel29, 1, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(1430, 335);
+            this.tableLayoutPanel12.TabIndex = 0;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.dgv_history);
+            this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel28.Location = new System.Drawing.Point(3, 3);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(852, 329);
+            this.panel28.TabIndex = 0;
+            // 
+            // dgv_history
+            // 
+            this.dgv_history.AllowUserToAddRows = false;
+            this.dgv_history.AllowUserToDeleteRows = false;
+            this.dgv_history.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_history.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_history.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_history.ColumnHeadersHeight = 34;
+            this.dgv_history.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_history_RedByte,
+            this.dgv_history_GreenByte,
+            this.dgv_history_BlueByte,
+            this.dgv_history_AlphaByte,
+            this.dgv_history_Brightness,
+            this.dgv_history_FilterName,
+            this.dgv_history_Superimpose});
+            this.dgv_history.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_history.Location = new System.Drawing.Point(0, 0);
+            this.dgv_history.Name = "dgv_history";
+            this.dgv_history.RowHeadersWidth = 62;
+            this.dgv_history.RowTemplate.Height = 28;
+            this.dgv_history.Size = new System.Drawing.Size(852, 329);
+            this.dgv_history.TabIndex = 1;
+            // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.btn_open_history_file);
+            this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel29.Location = new System.Drawing.Point(861, 3);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(566, 329);
+            this.panel29.TabIndex = 1;
+            // 
+            // btn_open_history_file
+            // 
+            this.btn_open_history_file.Location = new System.Drawing.Point(62, 74);
+            this.btn_open_history_file.Name = "btn_open_history_file";
+            this.btn_open_history_file.Size = new System.Drawing.Size(88, 37);
+            this.btn_open_history_file.TabIndex = 0;
+            this.btn_open_history_file.Text = "Open";
+            this.btn_open_history_file.UseVisualStyleBackColor = true;
+            this.btn_open_history_file.Click += new System.EventHandler(this.btn_open_history_file_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -897,80 +1024,6 @@ namespace ColourChanger
             this.picbx_result.TabIndex = 4;
             this.picbx_result.TabStop = false;
             // 
-            // chkbx_save_history
-            // 
-            this.chkbx_save_history.AutoSize = true;
-            this.chkbx_save_history.Location = new System.Drawing.Point(27, 18);
-            this.chkbx_save_history.Name = "chkbx_save_history";
-            this.chkbx_save_history.Size = new System.Drawing.Size(124, 24);
-            this.chkbx_save_history.TabIndex = 4;
-            this.chkbx_save_history.Text = "Save History";
-            this.chkbx_save_history.UseVisualStyleBackColor = true;
-            this.chkbx_save_history.CheckedChanged += new System.EventHandler(this.chkbx_save_history_CheckedChanged);
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel12.Controls.Add(this.panel28, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.panel29, 1, 0);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(1430, 335);
-            this.tableLayoutPanel12.TabIndex = 0;
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.dgv_history);
-            this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel28.Location = new System.Drawing.Point(3, 3);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(852, 329);
-            this.panel28.TabIndex = 0;
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.btn_open_history_file);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel29.Location = new System.Drawing.Point(861, 3);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(566, 329);
-            this.panel29.TabIndex = 1;
-            // 
-            // dgv_history
-            // 
-            this.dgv_history.AllowUserToAddRows = false;
-            this.dgv_history.AllowUserToDeleteRows = false;
-            this.dgv_history.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgv_history.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_history.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_history.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgv_history_RedByte,
-            this.dgv_history_GreenByte,
-            this.dgv_history_BlueByte,
-            this.dgv_history_AlphaByte,
-            this.dgv_history_Brightness,
-            this.dgv_history_FilterName});
-            this.dgv_history.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_history.Location = new System.Drawing.Point(0, 0);
-            this.dgv_history.Name = "dgv_history";
-            this.dgv_history.RowHeadersWidth = 62;
-            this.dgv_history.RowTemplate.Height = 28;
-            this.dgv_history.Size = new System.Drawing.Size(852, 329);
-            this.dgv_history.TabIndex = 1;
-            // 
             // dgv_history_RedByte
             // 
             this.dgv_history_RedByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -1014,61 +1067,17 @@ namespace ColourChanger
             // 
             // dgv_history_FilterName
             // 
+            this.dgv_history_FilterName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgv_history_FilterName.HeaderText = "Filter Name";
             this.dgv_history_FilterName.MinimumWidth = 8;
             this.dgv_history_FilterName.Name = "dgv_history_FilterName";
-            this.dgv_history_FilterName.Width = 150;
             // 
-            // dgv_ColourFiltersData_RedByte
+            // dgv_history_Superimpose
             // 
-            this.dgv_ColourFiltersData_RedByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_ColourFiltersData_RedByte.HeaderText = "Red Byte";
-            this.dgv_ColourFiltersData_RedByte.MinimumWidth = 8;
-            this.dgv_ColourFiltersData_RedByte.Name = "dgv_ColourFiltersData_RedByte";
-            this.dgv_ColourFiltersData_RedByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgv_ColourFiltersData_GreenByte
-            // 
-            this.dgv_ColourFiltersData_GreenByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_ColourFiltersData_GreenByte.HeaderText = "Green Byte";
-            this.dgv_ColourFiltersData_GreenByte.MinimumWidth = 8;
-            this.dgv_ColourFiltersData_GreenByte.Name = "dgv_ColourFiltersData_GreenByte";
-            this.dgv_ColourFiltersData_GreenByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgv_ColourFiltersData_BlueByte
-            // 
-            this.dgv_ColourFiltersData_BlueByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_ColourFiltersData_BlueByte.HeaderText = "Blue Byte";
-            this.dgv_ColourFiltersData_BlueByte.MinimumWidth = 8;
-            this.dgv_ColourFiltersData_BlueByte.Name = "dgv_ColourFiltersData_BlueByte";
-            this.dgv_ColourFiltersData_BlueByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgv_ColourFiltersData_AlphaByte
-            // 
-            this.dgv_ColourFiltersData_AlphaByte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_ColourFiltersData_AlphaByte.HeaderText = "Alpha Byte";
-            this.dgv_ColourFiltersData_AlphaByte.MinimumWidth = 8;
-            this.dgv_ColourFiltersData_AlphaByte.Name = "dgv_ColourFiltersData_AlphaByte";
-            this.dgv_ColourFiltersData_AlphaByte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgv_ColourFiltersData_Brightness
-            // 
-            this.dgv_ColourFiltersData_Brightness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_ColourFiltersData_Brightness.HeaderText = "Brightness";
-            this.dgv_ColourFiltersData_Brightness.MinimumWidth = 8;
-            this.dgv_ColourFiltersData_Brightness.Name = "dgv_ColourFiltersData_Brightness";
-            this.dgv_ColourFiltersData_Brightness.ReadOnly = true;
-            this.dgv_ColourFiltersData_Brightness.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // btn_open_history_file
-            // 
-            this.btn_open_history_file.Location = new System.Drawing.Point(62, 74);
-            this.btn_open_history_file.Name = "btn_open_history_file";
-            this.btn_open_history_file.Size = new System.Drawing.Size(88, 37);
-            this.btn_open_history_file.TabIndex = 0;
-            this.btn_open_history_file.Text = "Open";
-            this.btn_open_history_file.UseVisualStyleBackColor = true;
-            this.btn_open_history_file.Click += new System.EventHandler(this.btn_open_history_file_Click);
+            this.dgv_history_Superimpose.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_history_Superimpose.HeaderText = "Superimpose";
+            this.dgv_history_Superimpose.MinimumWidth = 8;
+            this.dgv_history_Superimpose.Name = "dgv_history_Superimpose";
             // 
             // Form1
             // 
@@ -1128,6 +1137,10 @@ namespace ColourChanger
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             this.tab_history.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_history)).EndInit();
+            this.panel29.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1138,10 +1151,6 @@ namespace ColourChanger
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picbx_Original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbx_result)).EndInit();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.panel29.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_history)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1222,13 +1231,14 @@ namespace ColourChanger
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_ColourFiltersData_AlphaByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_ColourFiltersData_Brightness;
         private System.Windows.Forms.DataGridView dgv_history;
+        private System.Windows.Forms.Button btn_open_history_file;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_RedByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_GreenByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_BlueByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_AlphaByte;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_Brightness;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_FilterName;
-        private System.Windows.Forms.Button btn_open_history_file;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_history_Superimpose;
     }
 }
 

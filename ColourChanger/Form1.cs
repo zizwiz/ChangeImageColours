@@ -31,7 +31,17 @@ namespace ColourChanger
                 dgv_ColourFiltersData.Rows.Add();
             }
 
+            //Add headers to rows
+            dgv_ColourFiltersData.Rows[0].HeaderCell.Value = "Red Scaling Factor";
+            dgv_ColourFiltersData.Rows[1].HeaderCell.Value = "Green Scaling Factor";
+            dgv_ColourFiltersData.Rows[2].HeaderCell.Value = "Blue Scaling Factor";
+            dgv_ColourFiltersData.Rows[3].HeaderCell.Value = "Alpha Scaling Factor";
+            dgv_ColourFiltersData.Rows[4].HeaderCell.Value = "Brightness Scaling Factor";
+            
 
+            // Resize the row headers
+            dgv_ColourFiltersData.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders; 
+            
             //if the xml file is not present then create it from the template one in resources 
             if (!File.Exists("ColourFilterData.xml"))
                 File.WriteAllText("ColourFilterData.xml", Properties.Resources.ColourFilterData);
@@ -271,10 +281,12 @@ namespace ColourChanger
             if (openHistoryFileDialog.ShowDialog() == DialogResult.OK)
             {
 
-                OpenHistory.PopulateHistoryDGV(openHistoryFileDialog.FileName, dgv_history);
+                OpenHistory.PopulateHistoryDGV(openHistoryFileDialog.FileName, dgv_history, chkbx_save_history);
 
 
             }
         }
+
+
     }
 }

@@ -22,9 +22,9 @@ namespace ColourChanger.history
              File.WriteAllText(myFileName, csvHeaders.ToString());
         }
 
-        public static void Update(CheckBox myCheckBoxName, DataGridView myDataGridView, ComboBox myComboBox)
+        public static void Update(CheckBox myHistoryCheckBoxName, DataGridView myDataGridView, ComboBox myComboBox, CheckBox mySuperimposeCheckBox)
         {
-            string myFileName = myCheckBoxName.Tag.ToString();
+            string myFileName = myHistoryCheckBoxName.Tag.ToString();
             var csvData = new StringBuilder();
 
             // get all the data from the datagridview and add it to the StringBuilder Object
@@ -42,12 +42,12 @@ namespace ColourChanger.history
             if (FileUtils.NumberOfLinesInFile(myFileName) > 1)
             {
                 //More than just the headers
-                File.AppendAllText(myFileName, "\r" + csvData.ToString() + myComboBox.Text);
+                File.AppendAllText(myFileName, "\r" + csvData.ToString() + myComboBox.Text + "," + mySuperimposeCheckBox.CheckState);
             }
             else
             {
                 //no carriage return first time round
-                File.AppendAllText(myFileName, csvData.ToString() + myComboBox.Text);
+                File.AppendAllText(myFileName, csvData.ToString() + myComboBox.Text + "," + mySuperimposeCheckBox.CheckState);
             }
         }
     }
